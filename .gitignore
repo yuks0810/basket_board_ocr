@@ -39,7 +39,9 @@ config/master.key
 /vendor/bundle
 
 # these should all be checked in to normalize the environment:
-Gemfile.lock, .ruby-version, .ruby-gemset
+Gemfile.lock
+.ruby-version
+.ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
@@ -73,3 +75,21 @@ yarn-debug.log*
 !/storage/.keep
 
 # End of https://www.toptal.com/developers/gitignore/api/rails
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# 初期作業時に作成されるファイル群
+package.json
+.browserslistrc
+babel.config.js
+bin/webpack
+bin/webpack-dev-server
+config/webpack/
+config/webpacker.yml
+postcss.config.js
+yarn.lock
