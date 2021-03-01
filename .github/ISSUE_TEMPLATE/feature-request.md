@@ -12,3 +12,5 @@ assignees: ''
 # 提案内容
 # TODO
 - [ ] 細かいタスクに分解できているなら書き出す
+# 参考URL
+* https://some_url.example.com
