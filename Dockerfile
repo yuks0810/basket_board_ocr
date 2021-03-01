@@ -1,7 +1,8 @@
 FROM ruby:2.7.0
 ENV LANG C.UTF-8
 
-ENV DIRPATH /app
+ENV APP_ROOT /myapp
+WORKDIR $APP_ROOT
 
 RUN apt-get update -qq \
     && apt-get install -y \
@@ -12,9 +13,8 @@ RUN apt-get update -qq \
     && apt-get install -y yarn \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir $DIRPATH
-WORKDIR $DIRPATH
-COPY . $DIRPATH
+# RUN mkdir $APP_ROOT
+COPY . /myapp
 RUN gem install bundler --conservative
 RUN bundle install --path vendor/bundle
 RUN bin/yarn

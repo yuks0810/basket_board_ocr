@@ -24,18 +24,14 @@ services:
     stdin_open: true
     tty: true
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle install --path vendor/bundle && bin/rails db:create && bin/rails webpacker:install && bin/rails s -p 3000 -b '0.0.0.0'"
     container_name: web
     ports:
       - "3000:3000"
     volumes:
-      - .:/myapp:delegated
+      - .:/myapp
       - bundle:/usr/local/bundle:cached
-      - /myapp/vendor
-      - /myapp/node_modules
-      - /myapp/tmp
-      - /myapp/log
-      - /myapp/.git
+
     depends_on:
       - db
     entrypoint: ./entrypoint.sh
