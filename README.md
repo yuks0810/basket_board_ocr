@@ -6,7 +6,7 @@ $ git clone <git url>
 $ docker-compose up --build
 ```
 
-localhost:3000にアクセスでページが表示される
+http://localhost:3000にアクセスでページが表示される
 
 ## generate command
 
