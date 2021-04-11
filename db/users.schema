@@ -1,0 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPRESSED", force: :cascade do |t|
+  t.string "name"
+  t.datetime "deleted_at", null: true
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.index ["name"], name: "index_users_on_name"
+end
